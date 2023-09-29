@@ -81,3 +81,14 @@
     (t (append
         (list (car L1) (car L2))
         (mix1 (cdr L1) (cdr L2))))))
+
+;; 9
+;; (mix2 '(a b c) '(x y)) => ((a . x)(b . y)(c))
+(defun mix2 (L1 L2)
+  (cond
+    ((null L1) (cons L2 nil))
+    ((null L2) (cons (cons (car L1) nil) nil))
+    (t (cons
+        (cons (car L1) (car L2))
+        (mix2 (cdr L1) (cdr L2))))))
+
