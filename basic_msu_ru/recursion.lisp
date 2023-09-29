@@ -70,3 +70,14 @@
     (t (cons
         (cons (car L) (cadr L))
         (pair (cddr L) )))))
+
+;; 8
+;; (mix1 '(a b c) '(x y)) => (a x b y c)
+(defun mix1 (L1 L2)
+  "Образует новый список, чередуя элементы заданных"
+  (cond
+    ((null L1) L2)
+    ((null L2) (cons (car L1) nil))
+    (t (append
+        (list (car L1) (car L2))
+        (mix1 (cdr L1) (cdr L2))))))
