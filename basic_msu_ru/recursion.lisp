@@ -92,3 +92,11 @@
         (cons (car L1) (car L2))
         (mix2 (cdr L1) (cdr L2))))))
 
+;; 10
+(defun elem (N L)
+  "Возвращает элемент верхнего уровня списка L, стоящий на позиции N"
+  (cond
+    ((null L) nil)   
+    ((= N 1) (car L))
+    (t (elem (- N 1) (cdr L)))))
+
