@@ -100,3 +100,11 @@
     ((= N 1) (car L))
     (t (elem (- N 1) (cdr L)))))
 
+;; 11
+(defun position-x (X L &optional (N 1))
+  "Возвращает порядковый номер значения X (или 0) на верхнем уровне списка L"
+  (cond
+    ((null L) 0)
+    ((equal (car L) X) N)
+    (t (position-x X (cdr L) (+ N 1)))))
+
