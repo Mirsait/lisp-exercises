@@ -108,3 +108,21 @@
     ((equal (car L) X) N)
     (t (position-x X (cdr L) (+ N 1)))))
 
+;; 12
+;; (rev-br '(a b c)) => (((c) b) a)
+(defun rev-br (L)
+  (cond
+    ((null (cdr L)) (cons (car L) nil))
+    (t (cons
+        (rev-br (cdr L))
+        (cons (car L) nil)))))
+
+;; 13
+;; (right-br '(a b c)) => (a (b (c)))
+(defun right-br (L)
+  (cond
+    ((null (cdr L)) (cons (car L) nil))
+    (t (cons
+        (car L)
+        (cons (right-br (cdr L)) nil)))))
+
