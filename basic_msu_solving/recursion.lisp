@@ -112,10 +112,8 @@
 ;; (rev-br '(a b c)) => (((c) b) a)
 (defun rev-br (L)
   (cond
-    ((null (cdr L)) (cons (car L) nil))
-    (t (cons
-        (rev-br (cdr L))
-        (cons (car L) nil)))))
+    ((null (cdr L)) L)
+    (t (list (rev-br (cdr L)) (car L)))))
 
 ;; 13
 ;; (right-br '(a b c)) => (a (b (c)))
