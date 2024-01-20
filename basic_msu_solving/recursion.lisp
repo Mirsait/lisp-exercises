@@ -96,7 +96,7 @@
 (defun elem (N L)
   "Возвращает элемент верхнего уровня списка L, стоящий на позиции N"
   (cond
-    ((null L) nil)   
+    ((null L) nil)
     ((= N 1) (car L))
     (t (elem (- N 1) (cdr L)))))
 
@@ -121,8 +121,5 @@
 ;; (right-br '(a b c)) => (a (b (c)))
 (defun right-br (L)
   (cond
-    ((null (cdr L)) (cons (car L) nil))
-    (t (cons
-        (car L)
-        (cons (right-br (cdr L)) nil)))))
-
+    ((null (cdr L)) L)
+    (t (list (car L) (right-br (cdr L))))))
