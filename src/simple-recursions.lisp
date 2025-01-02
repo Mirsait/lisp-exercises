@@ -132,3 +132,12 @@
          (left-br (butlast lst))
          (first (last lst))))))
 
+;; 15
+;; (right-br-out '(a (b (c)))) => (a b c)
+(defun right-br-out (lst)
+  (cond
+    ((endp (cdr lst)) lst)
+    (t (cons
+         (car lst)
+         (right-br-out (cadr lst))))))
+
