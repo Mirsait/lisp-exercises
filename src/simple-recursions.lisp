@@ -1,6 +1,7 @@
-;;Задачи на программирование рекурсии
+;;;; Задачи на программирование рекурсии
+;;;; Простая рекурсия
 
-;; Простая рекурсия
+(in-package :lisp-exercises)
 
 ;; 1
 (defun remove-last (L)
@@ -8,8 +9,8 @@
   (cond
     ((null (cdr L)) nil)
     (t (append
-        (cons (car L) nil)
-        (remove-last (cdr L))))))
+         (cons (car L) nil)
+         (remove-last (cdr L))))))
 
 ;; 2
 (defun one-level-p (L)
@@ -121,3 +122,4 @@
   (cond
     ((null (cdr L)) L)
     (t (list (car L) (right-br (cdr L))))))
+
