@@ -4,6 +4,7 @@
     :left-br
     :left-br-out
     :right-br
-    :right-br-out))
+    :right-br-out
+    :fact*))
 
 (in-package :lisp-exercises)

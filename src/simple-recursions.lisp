@@ -149,4 +149,14 @@
     (t (append
          (left-br-out (first (butlast lst)))
          (last lst)))))
+;; 17
+;; (fact* 3) => '(3 * 2 * 1)
+(defun fact* (n)
+  (when (<= n 0)
+    (return-from fact* 0))
+  (cond
+    ((= n 1) (list 1))
+    (t (append
+         (list n '*)
+         (fact* (- n 1))))))
 

@@ -39,5 +39,10 @@
     (ok (equalp
           (lex:left-br-out (left-br '(a b c)))
           '(a b c)))))
-
+;; 17
+(deftest fact*-test
+  (testing "shold to be true"
+    (ok (equalp
+          (lex:fact* 4)
+          '(4 * 3 * 2 * 1)))))
 
