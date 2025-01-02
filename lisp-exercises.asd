@@ -9,7 +9,7 @@
                    (:file "simple-recursions"))))
   :description ""
   :long-description #.(read-file-string (subpathname *load-pathname* "README.md"))
-  :in-order-to ((test-op (test-op "lisp-exrecises/tests"))))
+  :in-order-to ((test-op (test-op "lisp-exercises/tests"))))
 
 (asdf:defsystem "lisp-exercises/tests"
   :version "0.1.0"
@@ -17,5 +17,6 @@
   :license "MIT"
   :depends-on ("lisp-exercises" "rove")
   :components ((:module "tests"
+                 :components
                  ((:file "simple-recursions"))))
   :description "Tests for lisp-exercises")
