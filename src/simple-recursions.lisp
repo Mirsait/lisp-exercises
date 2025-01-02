@@ -141,3 +141,12 @@
          (car lst)
          (right-br-out (cadr lst))))))
 
+;; 16
+;; (left-br-out '(((a)b)c)) => '(a b c)
+(defun left-br-out (lst)
+  (cond
+    ((endp lst) (first lst))
+    (t (append
+         (left-br-out (first (butlast lst)))
+         (last lst)))))
+
