@@ -123,3 +123,12 @@
     ((null (cdr L)) L)
     (t (list (car L) (right-br (cdr L))))))
 
+;; 14
+;; (left-br '(a b c)) => (((a) b) c)
+(defun left-br (lst)
+  (cond
+    ((endp (rest lst)) lst)
+    (t (list
+         (left-br (butlast lst))
+         (first (last lst))))))
+
